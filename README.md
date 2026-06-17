@@ -1,5 +1,9 @@
 # Module: Pet Loot (Bananas)
 
+<p align="center">
+  <img src="icon.png" alt="Pet Loot (Bananas)" width="246" height="246">
+</p>
+
 This is a module for [AzerothCore](https://www.azerothcore.org).
 
 It allows the vanity pet **Bananas** (ID 23234) to act as an immersive auto-loot assistant for the player.
