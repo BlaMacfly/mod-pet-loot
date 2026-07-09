@@ -73,8 +73,13 @@ public:
         {
             if (auto cTemplate = victim->GetCreatureTemplate())
             {
-                bool personal = (player->GetGroup() == nullptr);
-                victim->loot.FillLoot(cTemplate->lootid, LootTemplates_Creature, player, personal);
+                // Some creatures have no loot table.
+                // Avoid calling FillLoot with lootid 0 to prevent console errors.
+                if (cTemplate->lootid)
+                {
+                    bool personal = (player->GetGroup() == nullptr);
+                    victim->loot.FillLoot(cTemplate->lootid, LootTemplates_Creature, player, personal);
+                }
             }
         }
 
